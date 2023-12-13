@@ -1,36 +1,21 @@
-
-
 <template>
- 
-    <div class="wrapper">
-      <HelloWorld />
-      <Practice03/>
-      <Practice04/>
-      <Assignment01/>
-      <Practice05/><br>
-      <br>
-      <Assignment02/>
-      <NativeeventObj/>
-     <EventModifier/>
-     <TwowayDatabinding/>
-     <ComputedProp/>
-     <Wathchers/>
-     <ref/>
-    </div>
-
+  <div class="wrapper">
+    <Props message="Props Parent to child"/><br>
+    <h2>child to Parent data tranfer</h2>
+    <PropsBehavior @childData="receiveDataFromChild"/>
+    <p>Message from child: {{ messageFromChild }}</p>
+  </div>
 </template>
 
 <script setup>
-import Wathchers from "./Wathchers.vue"
-import EventModifier from "./EventModifier.vue"
-import Assignment01 from "./components/Assignment01.vue";
-import HelloWorld from "./components/HelloWorld.vue";
-import NativeeventObj from "./components/NativeeventObj.vue";
-import Practice03 from "./components/Practice03.vue";
-import Practice04 from "./components/Practice04.vue";
-import Practice05 from "./components/Practice05.vue";
-import TwowayDatabinding from "./TwowayDatabinding.vue";
-import ComputedProp from "./ComputedProp.vue";
-import ref from "./components/sections/section5/ref.vue";
-</script>
+import Props from './components/sections/section8/Props.vue';
+import PropsBehavior from './components/sections/section8/PropsBehavior.vue';
+import { ref } from 'vue';
 
+const messageFromChild = ref('');
+
+// The method to handle the custom event from the child
+const receiveDataFromChild = (dataFromChild) => {
+  messageFromChild.value = dataFromChild;
+};
+</script>

@@ -1,6 +1,6 @@
 <template>
     <div>
-      <p>{{ message }}</p>
+      <h1>{{ message }}</h1>
     </div>
   </template>
   
@@ -8,10 +8,7 @@
   export default {
     // Define a prop named "message"
     props: ['message'],
-    mounted() {
-      // Access the prop value in the child component
-      console.log('Received prop:', this.message);
-    }
+    
   };
   </script>
   
