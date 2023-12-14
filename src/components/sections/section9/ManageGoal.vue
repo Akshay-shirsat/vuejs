@@ -3,9 +3,11 @@
       <h1>Manage GOALS</h1><br>
       <input type="text" ref="goal" />
       <button @click="setGoal">Set Goal</button>
+      <Teleport to="body">
       <ErrorAlert v-if="inputIsInvalid">
         <p>Please enter at least a few characters.</p>
       </ErrorAlert>
+    </Teleport>
     </div>
   </template>
   
